@@ -82,7 +82,9 @@ namespace FivuvuvMMD
                     keyframes.Add(vmdMorphFrame.MorphName, new List<Keyframe>() { new Keyframe(vmdMorphFrame.FrameIndex * delta, vmdMorphFrame.Weight * 100) });
                 }
             }
-            GameObject gameObject = GameObject.Find("U_Char_2");
+            string targetName = morphTempSO.targetName;
+            GameObject gameObject = GameObject.Find(targetName);
+            if (gameObject == null) { Debug.LogError("Can't find GameObject"); }
             Dictionary<int, string> blendShapeNames = GetblendShapeNames(gameObject.GetComponent<SkinnedMeshRenderer>());
 
             foreach (var item in keyframes)

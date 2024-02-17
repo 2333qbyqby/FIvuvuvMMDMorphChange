@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MorphTempSO : ScriptableObject
 {
+    [Header("GameObject Name")]
+    public string targetName;
     public List<VMDSingleFrame> frames;
 
     public List<VMDMorphMap> morphMap;
